@@ -124,9 +124,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="myItemText" destination="8as-Qx-BDf" id="Pmn-q9-lrt"/>
+                        <segue destination="O7U-VK-GJw" kind="unwind" identifier="unwindToList" unwindAction="unwindToList:" id="jh8-1J-bUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <exit id="O7U-VK-GJw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1282" y="-1012"/>
         </scene>

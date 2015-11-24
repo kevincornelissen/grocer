@@ -20,6 +20,8 @@ class SecondViewController: UIViewController {
             myItemText.text = ""
             self.view.endEditing(true)
             NSUserDefaults.standardUserDefaults().setObject(myItemList, forKey: "myItems")
+            
+            self.performSegueWithIdentifier("unwindToList", sender: self)
         }
     }
     
