@@ -12,17 +12,15 @@ var myItemList = [String]()
 
 
 class SecondViewController: UIViewController {
-    
+    @IBAction func saveItem(sender: AnyObject) {
+        saveItemAndReturnToList()
+    }
+    @IBAction func cancelAddItem(sender: AnyObject) {
+        self.performSegueWithIdentifier("unwindToList", sender: self)
+    }
 
     @IBAction func doneEditing(sender: AnyObject) {
-        if myItemText.text?.characters.count > 0 {
-            myItemList.append(myItemText.text!)
-            myItemText.text = ""
-            self.view.endEditing(true)
-            NSUserDefaults.standardUserDefaults().setObject(myItemList, forKey: "myItems")
-            
-            self.performSegueWithIdentifier("unwindToList", sender: self)
-        }
+        saveItemAndReturnToList()
     }
     
     @IBOutlet weak var myItemText: UITextField!
@@ -35,6 +33,18 @@ class SecondViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func saveItemAndReturnToList(){
+        if myItemText.text?.characters.count > 0 {
+            myItemList.append(myItemText.text!)
+            myItemText.text = ""
+            self.view.endEditing(true)
+            NSUserDefaults.standardUserDefaults().setObject(myItemList, forKey: "myItems")
+            
+            self.performSegueWithIdentifier("unwindToList", sender: self)
+        }
+
     }
 
 
