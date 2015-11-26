@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource {
+class ChecklistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {}
@@ -30,15 +30,33 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let myCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "myCell")
         myCell.textLabel?.text = myItemList[indexPath.row]
-        
+
         return myCell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if cell.accessoryType == .Checkmark
+            {
+                cell.accessoryType = .None
+            }
+            else
+            {
+                cell.accessoryType = .Checkmark
+            }
+        }
+
     }
     
     override func viewWillAppear(animated: Bool) {
         myTableView.reloadData()
+
     }
     
     override func viewDidLoad() {
+        myTableView.delegate = self
+        myTableView.dataSource = self
         super.viewDidLoad()
         if (NSUserDefaults.standardUserDefaults().objectForKey("myItems") != nil) {
             myItemList = NSUserDefaults.standardUserDefaults().objectForKey("myItems") as! [String]

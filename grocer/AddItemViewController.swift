@@ -24,6 +24,10 @@ class SecondViewController: UIViewController {
     }
     
     @IBOutlet weak var myItemText: UITextField!
+    
+    override func viewWillAppear(animated: Bool) {
+        myItemText.becomeFirstResponder()
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,10 @@ class SecondViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        myItemText.resignFirstResponder()
     }
     
     func saveItemAndReturnToList(){

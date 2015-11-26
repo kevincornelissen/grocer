@@ -10,7 +10,7 @@
         <!--Shoply-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="grocer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="ChecklistViewController" customModule="grocer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -31,13 +31,14 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="myCell" rowHeight="36" id="fB0-6x-dSg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="36" id="fB0-6x-dSg">
                                         <rect key="frame" x="0.0" y="28" width="343" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fB0-6x-dSg" id="QTB-j0-NHr">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
+                                            <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="1" height="1"/>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
