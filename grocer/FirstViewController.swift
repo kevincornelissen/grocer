@@ -34,7 +34,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
         return myCell
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         myTableView.reloadData()
     }
     
