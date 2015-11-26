@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Shoply-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="grocer" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,10 +63,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="zqw-xF-fvb">
+                    <navigationItem key="navigationItem" title="Shoply" id="zqw-xF-fvb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="J2I-MZ-hSE">
                             <connections>
-                                <segue destination="8rJ-Kc-sve" kind="show" id="LCd-kh-MJo"/>
+                                <segue destination="8rJ-Kc-sve" kind="presentation" id="LCd-kh-MJo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="1282" y="-320"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Add Item-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="grocer" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,15 +91,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luk-20-tOp">
-                                <rect key="frame" x="109" y="72" width="102" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter an Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luk-20-tOp">
+                                <rect key="frame" x="94" y="192" width="102" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Qx-BDf">
-                                <rect key="frame" x="20" y="101" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Qx-BDf">
+                                <rect key="frame" x="20" y="221" width="280" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8as-Qx-BDf" secondAttribute="height" multiplier="28:3" id="TvS-DL-DBw"/>
@@ -110,25 +110,40 @@
                                     <action selector="doneEditing:" destination="8rJ-Kc-sve" eventType="primaryActionTriggered" id="IqR-8y-ndp"/>
                                 </connections>
                             </textField>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ity-yF-Du8">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="l1M-1O-uAf"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Luk-20-tOp" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="28M-bO-tbI"/>
-                            <constraint firstItem="8as-Qx-BDf" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="2nx-kt-gOt"/>
-                            <constraint firstItem="8as-Qx-BDf" firstAttribute="top" secondItem="Luk-20-tOp" secondAttribute="bottom" constant="8" id="YP0-Rm-5D8"/>
-                            <constraint firstItem="Luk-20-tOp" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="wPK-HV-1rG"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NMR-8b-3mW"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="Osl-qw-Nue">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UFq-Pe-sBc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="h4W-fy-1R4"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="myItemText" destination="8as-Qx-BDf" id="Pmn-q9-lrt"/>
+                        <outlet property="searchDisplayController" destination="Wwm-GB-OVm" id="jnD-EY-ALL"/>
                         <segue destination="O7U-VK-GJw" kind="unwind" identifier="unwindToList" unwindAction="unwindToList:" id="jh8-1J-bUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
                 <exit id="O7U-VK-GJw" userLabel="Exit" sceneMemberID="exit"/>
+                <searchDisplayController id="Wwm-GB-OVm">
+                    <connections>
+                        <outlet property="delegate" destination="8rJ-Kc-sve" id="r8d-OM-dGO"/>
+                        <outlet property="searchBar" destination="ity-yF-Du8" id="wpb-cA-YGe"/>
+                        <outlet property="searchContentsController" destination="8rJ-Kc-sve" id="FHe-dh-LrA"/>
+                        <outlet property="searchResultsDataSource" destination="8rJ-Kc-sve" id="ctO-Mj-Aor"/>
+                        <outlet property="searchResultsDelegate" destination="8rJ-Kc-sve" id="kj5-xc-WQa"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1282" y="-1012"/>
         </scene>
