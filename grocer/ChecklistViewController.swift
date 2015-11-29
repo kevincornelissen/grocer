@@ -27,6 +27,9 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let myCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "myCell")
+        if shoppingList[indexPath.row].checked == true {
+            myCell.accessoryType = .Checkmark
+        }
         myCell.textLabel?.text = shoppingList[indexPath.row].itemName
         return myCell
     }
@@ -34,12 +37,14 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            if cell.accessoryType == .Checkmark
+            if shoppingList[indexPath.row].checked == true
             {
+                shoppingList[indexPath.row].checked = false
                 cell.accessoryType = .None
             }
             else
             {
+                shoppingList[indexPath.row].checked = true
                 cell.accessoryType = .Checkmark
             }
         }
@@ -48,10 +53,6 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewWillAppear(animated: Bool) {
         myTableView.reloadData()
-        if shoppingList.count > 0 {
-            print(shoppingList[0].itemName)
-        }
-
     }
     
     override func viewDidLoad() {
