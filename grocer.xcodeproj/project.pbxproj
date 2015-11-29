@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB7D4C81C0B986A006A3F39 /* shoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D4C71C0B986A006A3F39 /* shoppingListItem.swift */; };
 		0AE58FD91C038E9C004A6EB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE58FD81C038E9C004A6EB8 /* AppDelegate.swift */; };
 		0AE58FDB1C038E9C004A6EB8 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE58FDA1C038E9C004A6EB8 /* ChecklistViewController.swift */; };
 		0AE58FDD1C038E9C004A6EB8 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE58FDC1C038E9C004A6EB8 /* AddItemViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AB7D4C71C0B986A006A3F39 /* shoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shoppingListItem.swift; sourceTree = "<group>"; };
 		0AE58FD51C038E9C004A6EB8 /* grocer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grocer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE58FD81C038E9C004A6EB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AE58FDA1C038E9C004A6EB8 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				0AE58FD81C038E9C004A6EB8 /* AppDelegate.swift */,
 				0AE58FDA1C038E9C004A6EB8 /* ChecklistViewController.swift */,
 				0AE58FDC1C038E9C004A6EB8 /* AddItemViewController.swift */,
+				0AB7D4C71C0B986A006A3F39 /* shoppingListItem.swift */,
 				0AE58FDE1C038E9C004A6EB8 /* Main.storyboard */,
 				0AE58FE11C038E9C004A6EB8 /* Assets.xcassets */,
 				0AE58FE31C038E9C004A6EB8 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE58FDD1C038E9C004A6EB8 /* AddItemViewController.swift in Sources */,
+				0AB7D4C81C0B986A006A3F39 /* shoppingListItem.swift in Sources */,
 				0AE58FD91C038E9C004A6EB8 /* AppDelegate.swift in Sources */,
 				0AE58FDB1C038E9C004A6EB8 /* ChecklistViewController.swift in Sources */,
 			);

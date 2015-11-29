@@ -8,7 +8,7 @@
 
 import UIKit
 
-var myItemList = [String]()
+var shoppingList = [shoppingListItem]()
 
 
 class SecondViewController: UIViewController {
@@ -27,6 +27,7 @@ class SecondViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         myItemText.becomeFirstResponder()
+        
     }
         
     override func viewDidLoad() {
@@ -45,11 +46,9 @@ class SecondViewController: UIViewController {
     
     func saveItemAndReturnToList(){
         if myItemText.text?.characters.count > 0 {
-            myItemList.append(myItemText.text!)
+            shoppingList.append(shoppingListItem(itemName: myItemText.text!, checked: false))
             myItemText.text = ""
             self.view.endEditing(true)
-            NSUserDefaults.standardUserDefaults().setObject(myItemList, forKey: "myItems")
-            
             self.performSegueWithIdentifier("unwindToList", sender: self)
         }
 
